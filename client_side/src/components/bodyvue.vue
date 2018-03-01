@@ -24,9 +24,9 @@ export default {
     blogcard
   },
   computed: {
-		arrArticles () {
-			return this.$store.state.Articles
-		}
+    arrArticles () {
+      return this.$store.state.Articles
+    }
   },
   created () {
     this.$store.dispatch('getAllArticles')

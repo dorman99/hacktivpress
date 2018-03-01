@@ -6,7 +6,7 @@
       “{{article.content.substr(0,100)}} ..”
     </p>
     <p class="subtitle">
-      by: Jeff Atwood
+      by: {{article.author.name}}
     </p>
   </div>
   <footer class="card-footer">
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-	props: ['article'],
+  props: ['article'],
   name: 'blogcard'
 }
 </script>
