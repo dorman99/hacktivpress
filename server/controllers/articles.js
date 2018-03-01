@@ -5,6 +5,7 @@ const create = (req,res)=>{
 		title: req.body.title,
 		author: req.headers.userid,
 		content: req.body.content,
+		category: req.body.category
 	})
 
 	article.save()

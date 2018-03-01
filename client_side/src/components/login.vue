@@ -110,8 +110,9 @@ export default {
           if (response.data === 'invalid') {
             this.$swal('Fail to Logged in', 'username/password was invalid', 'error')
           } else {
-            console.log(response.data)
-            localStorage.setItem('token', response.data.token)
+						console.log(response.data)
+						localStorage.setItem('token', response.data.token)
+						// this.$store.dispatch('hidepostbutton')
             this.$router.push('/')
           }
         }).catch(err => { console.error(err) })
@@ -147,7 +148,10 @@ export default {
         }
       }
     }
-  }
+	},
+	created () {
+		this.$store.dispatch('hidepostbutton')
+	}
 }
 </script>
 

@@ -6,15 +6,25 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    Articles: []
+    Articles: [],
+    buttonpost: true
   },
   mutations: {
     allArticles (state, payload) {
       state.Articles = payload
+      if (localStorage.getItem('token')) {
+        state.buttonpost = true
+      } else {
+        state.buttonpost = false
+      }
     },
     destroydata (state, payload) {
       state.Articles = []
       localStorage.clear()
+    },
+    changebuttonhide (state, payload) {
+      console.log('ini mutasi nya loh')
+      state.buttonpost = false
     }
   },
   actions: {
@@ -28,6 +38,9 @@ export default new Vuex.Store({
     },
     logout ({commit}) {
       commit('destroydata')
+    },
+    hidepostbutton ({commit}) {
+      commit('changebuttonhide')
     }
   }
 })

@@ -30,7 +30,7 @@ export default {
     if (localStorage.getItem('token')) {
       this.$store.dispatch('getAllArticles')
     } else {
-      this.$router.push('/login')
+      this.$store.dispatch('getAllArticles')
     }
   }
 }
