@@ -1,12 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <navbarvue/>
+    <bodyvue/>
   </div>
 </template>
+
+<script>
+import navbarvue from './components/navbarvue.vue'
+import bodyvue from './components/bodyvue.vue'
+export default {
+  components: {
+    navbarvue,
+    bodyvue
+  }
+}
+</script>
 
 <style>
 #app {

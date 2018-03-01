@@ -3,7 +3,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/hackpress');
 var index = require('./routes/index');
 var cors = require('cors')
 var users = require('./routes/users');
