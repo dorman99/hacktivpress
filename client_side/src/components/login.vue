@@ -30,7 +30,7 @@
               <div class="field">
                   <a @click.prevent="showdaftar" href="#">{{cek}}</a>
               </div>
-              <button @click.prevent="sg()" class="button is-block is-info is-large is-fullwidth">proceed</button>
+              <button @click.prevent="sg()" class="button is-block is-info is-large is-fullwidth">{{uhuy}}</button>
             </form>
           </div>
         </div>
@@ -45,7 +45,8 @@ export default {
   data () {
     return {
       daftar: false,
-      cek: 'signup',
+			cek: 'Signup',
+			uhuy: 'Login',
       login: {
         email: '',
         password: ''
@@ -67,10 +68,12 @@ export default {
     showdaftar () {
       if (this.daftar === false) {
         this.daftar = !this.daftar
-        this.cek = 'login'
+				this.cek = 'login'
+				this.uhuy = 'Sign Up'
       } else {
         this.daftar = !this.daftar
-        this.cek = 'signup'
+				this.cek = 'signup'
+				this.uhuy = 'Login'
       }
     },
     validateEmail (email) {
