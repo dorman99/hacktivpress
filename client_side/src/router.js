@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 import About from './views/About.vue'
 import login from './components/login.vue'
+import bodyvue from './components/bodyvue'
 Vue.use(Router)
 
 export default new Router({
@@ -10,8 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'bodyvue',
+      component: bodyvue
     },
     {
       path: '/about',

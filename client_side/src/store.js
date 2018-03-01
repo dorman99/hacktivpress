@@ -11,6 +11,10 @@ export default new Vuex.Store({
   mutations: {
     allArticles (state, payload) {
       state.Articles = payload
+    },
+    destroydata (state, payload) {
+      state.Articles = []
+      localStorage.clear()
     }
   },
   actions: {
@@ -21,6 +25,9 @@ export default new Vuex.Store({
           console.log(response)
           commit('allArticles', response.data.data)
         })
+    },
+    logout ({commit}) {
+      commit('destroydata')
     }
   }
 })

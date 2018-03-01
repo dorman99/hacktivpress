@@ -2,9 +2,7 @@
   <body>
   <section class="section">
     <div class="container">
-      <h1 class="title">Section</h1>
       <h2 class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
       <div class="columns is-6" style="flex-wrap: wrap">
         <div v-for="article in arrArticles" :key="article._id" class="column is-4">
         <blogcard :article="article"/>
@@ -29,7 +27,11 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('getAllArticles')
+    if (localStorage.getItem('token')) {
+      this.$store.dispatch('getAllArticles')
+    } else {
+      this.$router.push('/login')
+    }
   }
 }
 </script>

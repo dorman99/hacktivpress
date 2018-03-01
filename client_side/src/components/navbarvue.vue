@@ -42,7 +42,7 @@
             </a>
           </p>
           <p class="control">
-            <a class="button is-primary" href="https://github.com/jgthms/bulma/archive/0.5.1.zip">
+            <a v-if="this.$route.path === '/'" class="button is-primary" @click.prevent="logout">
               <span class="icon">
                 <i class="far fa-sign-out"></i>
               </span>
@@ -58,7 +58,13 @@
 
 <script>
 export default {
-  name: 'navbarvue'
+  name: 'navbarvue',
+  methods: {
+    logout () {
+			this.$store.dispatch('logout')
+			this.$router.push('/login')
+    }
+  }
 }
 </script>
 

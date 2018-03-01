@@ -4,10 +4,12 @@ import router from './router'
 import store from './store'
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
+import swal from 'sweetalert'
 import axios from 'axios'
 
+Vue.prototype.$swal = swal
 Vue.prototype.$http = axios.create({
-  baseURL: 'http://35.197.129.37:3050'
+  baseURL: 'http://localhost:3000'
 })
 Vue.use(Buefy)
 
