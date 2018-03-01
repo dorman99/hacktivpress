@@ -5,7 +5,8 @@ var articleSchema = new Schema({
 	title: String,
 	author	: { type: Schema.Types.ObjectId, ref: 'user' },
 	content: String,
-	category: String
+	category: String,
+	img: String
 });
 
 var Article = mongoose.model('article', articleSchema);
